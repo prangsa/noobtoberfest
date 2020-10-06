@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        <div>Find the real <b>BUTTON !!</b></div>
+    </div>
+
+    <div id="abc"><button class="btn" id="real-btn">Login</button></div>
+</body>
+
+<script>
+    let frontBtn = Math.floor(Math.random() * 100) + 1;
+    let backBtn = Math.floor(Math.random() * 100) + 1;
+    let totalBtn = frontBtn + backBtn;
+
+    function appendBtn() {
+        dummy = document.createElement("button");
+        dummy.setAttribute("class", "btn");
+        dummy.innerHTML = "Login"
+        document.getElementById("abc").appendChild(dummy);
+    }
+
+    function prependBtn() {
+        dummy = document.createElement("button");
+        dummy.setAttribute("class", "btn");
+        dummy.innerHTML = "Login"
+        document.getElementById("abc").prepend(dummy);
+    }
+    window.onload = function() {
+
+        for (i=0; i<frontBtn;i++) {
+            prependBtn()
+        }
+        for (i=0; i<backBtn;i++) {
+            appendBtn()
+        }
+    };
+    const foundMe = () => {
+        alert("U Found ME !!!!!")
+        location.reload()
+    }
+    document.getElementById("real-btn").addEventListener('click', foundMe);
+</script>
+<style>
+.btn {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+</style>
+</html>
